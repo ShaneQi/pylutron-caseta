@@ -558,7 +558,7 @@ class Smartbridge:
             device_zone = None
             if "LocalZones" in device:
                 device_zone = id_from_href(device["LocalZones"][0]["href"])
-            device_name = "_".join(device["FullyQualifiedName"])
+            device_name = device['Name']
             self.devices.setdefault(
                 device_id,
                 {"device_id": device_id, "current_state": -1, "fan_speed": None},
